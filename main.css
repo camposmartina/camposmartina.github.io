@@ -1,11 +1,9 @@
-/* Reset y caja de modelo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos globales */
 body {
     background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Fondo degradado */
     font-family: 'Arial', sans-serif;
@@ -16,29 +14,26 @@ body {
     height: 100vh; /* Altura completa de la ventana */
 }
 
-/* Contenedor principal */
 .contenedor {
     text-align: center;
     position: relative; /* Necesario para el posicionamiento absoluto de los botones */
-    padding: 20px;
+    padding: 20px; /* Agregado para evitar que el contenido esté pegado a los bordes */
 }
 
-/* Título */
 .titulo h1 {
     margin-bottom: 20px;
     font-size: 1.5rem; /* Tamaño de fuente adaptable */
 }
 
-/* Opciones */
 .opciones {
     position: relative;
+    margin-top: 20px; /* Separación entre el título y los botones */
 }
 
-/* Botones */
 .opciones p {
     background: #333;
     display: inline-block;
-    padding: 15px 25px;
+    padding: 10px 20px;
     color: #fff;
     border-radius: 8px;
     font-weight: bold;
@@ -47,11 +42,15 @@ body {
     position: absolute;
 }
 
-/* Posicionamiento de botones */
 .p1 {
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
+}
+
+.p1:hover {
+    background: #555;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .p2 {
@@ -60,67 +59,37 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Hover en botones */
-.p1:hover, .p2:hover {
+.p2:hover {
     background: #555;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Estilos para el mensaje final */
-.final-message {
-    background: #ff0000; /* Color rojo */
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 550px;
-    color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .titulo h1 {
-        font-size: 1.2rem;
-    }
-
-    .opciones p {
-        padding: 12px 20px;
-        font-size: 1rem;
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+    .p1, .p2 {
+        padding: 8px 16px; /* Reducir el tamaño del botón en dispositivos móviles */
+        font-size: 0.8rem; /* Tamaño de fuente más pequeño */
     }
 
     .p1 {
-        left: 20%;
+        left: 50%; /* Centrar el botón "No" */
         transform: translate(-50%, -50%);
+        margin-bottom: 10px; /* Separar el botón "No" del botón "Sí" */
     }
 
     .p2 {
-        left: 80%;
+        left: 50%; /* Centrar el botón "Sí" */
         transform: translate(-50%, -50%);
     }
-}
 
-@media (max-width: 480px) {
+    .final-message {
+        width: 90%; /* Ajustar el tamaño del mensaje final para pantallas pequeñas */
+        max-width: none; /* Eliminar el ancho máximo para pantallas pequeñas */
+        padding: 20px; /* Reducir el padding en dispositivos móviles */
+    }
+
     .titulo h1 {
-        font-size: 1rem;
-    }
-
-    .opciones p {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-        width: 80%; /* Asegura que los botones no sean demasiado grandes en pantallas pequeñas */
-        position: static; /* Cambiar a posición estática para evitar problemas en pantallas pequeñas */
-        margin: 10px auto; /* Centrar los botones */
-    }
-
-    .p1, .p2 {
-        top: auto; /* Eliminar el posicionamiento vertical absoluto */
-        left: auto; /* Eliminar el posicionamiento horizontal absoluto */
-        transform: none; /* Eliminar el transform */
-        display: block; /* Asegurarse de que cada botón ocupe toda la línea */
+        font-size: 1.2rem; /* Reducir el tamaño del texto en dispositivos móviles */
     }
 }
+
