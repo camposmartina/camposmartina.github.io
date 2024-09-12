@@ -1,9 +1,11 @@
+/* Reset y caja de modelo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos globales */
 body {
     background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Fondo degradado */
     font-family: 'Arial', sans-serif;
@@ -14,20 +16,25 @@ body {
     height: 100vh; /* Altura completa de la ventana */
 }
 
+/* Contenedor principal */
 .contenedor {
     text-align: center;
     position: relative; /* Necesario para el posicionamiento absoluto de los botones */
+    padding: 20px;
 }
 
+/* Título */
 .titulo h1 {
     margin-bottom: 20px;
     font-size: 1.5rem; /* Tamaño de fuente adaptable */
 }
 
+/* Opciones */
 .opciones {
     position: relative;
 }
 
+/* Botones */
 .opciones p {
     background: #333;
     display: inline-block;
@@ -40,15 +47,11 @@ body {
     position: absolute;
 }
 
+/* Posicionamiento de botones */
 .p1 {
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
-}
-
-.p1:hover {
-    background: #555;
-    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .p2 {
@@ -57,11 +60,13 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.p2:hover {
+/* Hover en botones */
+.p1:hover, .p2:hover {
     background: #555;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* Estilos para el mensaje final */
 .final-message {
     background: #ff0000; /* Color rojo */
     position: fixed;
@@ -75,4 +80,42 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .titulo h1 {
+        font-size: 1.2rem;
+    }
+
+    .opciones p {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .p1 {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .p2 {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo h1 {
+        font-size: 1rem;
+    }
+
+    .opciones p {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .p1, .p2 {
+        top: 60%;
+        width: 80%; /* Asegura que los botones no sean demasiado grandes en pantallas pequeñas */
+    }
 }
