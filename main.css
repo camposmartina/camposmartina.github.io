@@ -94,12 +94,12 @@ body {
     }
 
     .p1 {
-        left: 50%;
+        left: 20%;
         transform: translate(-50%, -50%);
     }
 
     .p2 {
-        left: 50%;
+        left: 80%;
         transform: translate(-50%, -50%);
     }
 }
@@ -112,10 +112,15 @@ body {
     .opciones p {
         padding: 10px 15px;
         font-size: 0.9rem;
+        width: 80%; /* Asegura que los botones no sean demasiado grandes en pantallas pequeñas */
+        position: static; /* Cambiar a posición estática para evitar problemas en pantallas pequeñas */
+        margin: 10px auto; /* Centrar los botones */
     }
 
     .p1, .p2 {
-        top: 60%;
-        width: 80%; /* Asegura que los botones no sean demasiado grandes en pantallas pequeñas */
+        top: auto; /* Eliminar el posicionamiento vertical absoluto */
+        left: auto; /* Eliminar el posicionamiento horizontal absoluto */
+        transform: none; /* Eliminar el transform */
+        display: block; /* Asegurarse de que cada botón ocupe toda la línea */
     }
 }
